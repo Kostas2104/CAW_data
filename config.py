@@ -1,7 +1,7 @@
 import os
 
 # Railway automatically injects DATABASE_URL
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("postgresql://postgres:HHbFxDnoMzxQNDQWUHnaqoNvDnvnpUze@postgres.railway.internal:5432/railway")
 
 # API Keys
 API_KEY_CRONOSCAN = "3TSECYS4FZFNCWEUK5HCFTP9W5WMSX5NUY"
