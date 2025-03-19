@@ -1,9 +1,8 @@
 import psycopg2
-from psycopg2.extras import DictCursor
 from config import DATABASE_URL
 
 def connect_db():
-    return psycopg2.connect(DATABASE_URL, cursor_factory=DictCursor)
+    return psycopg2.connect(DATABASE_URL, sslmode="require")
 
 def save_data(market_data, caw_volume_usd_gateio):
     """Save CAW data to the database"""
