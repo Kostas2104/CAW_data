@@ -1,3 +1,8 @@
+import os
+
+# Railway automatically injects DATABASE_URL
+DATABASE_URL = os.getenv("DATABASE_URL")
+
 # API Keys
 API_KEY_CRONOSCAN = "3TSECYS4FZFNCWEUK5HCFTP9W5WMSX5NUY"
 API_KEY_CMC = "a8fd7838-7f35-4f17-8e5a-c8af39ef18ba"
