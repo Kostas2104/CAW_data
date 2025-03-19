@@ -5,27 +5,6 @@ from config import DATABASE_URL
 def connect_db():
     return psycopg2.connect(DATABASE_URL, cursor_factory=DictCursor)
 
-def create_tables():
-    """Create database table for CAW data"""
-    conn = connect_db()
-    cur = conn.cursor()
-    
-    cur.execute("""
-    CREATE TABLE IF NOT EXISTS crypto_data (
-        id SERIAL PRIMARY KEY,
-        timestamp TIMESTAMP DEFAULT NOW(),
-        market_cap_caw NUMERIC,
-        price_caw NUMERIC,
-        price_cro NUMERIC,
-        volume_24h_caw NUMERIC,
-        caw_volume_gateio NUMERIC
-    )
-    """)
-    
-    conn.commit()
-    cur.close()
-    conn.close()
-
 def save_data(market_data, caw_volume_usd_gateio):
     """Save CAW data to the database"""
     conn = connect_db()
